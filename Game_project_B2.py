@@ -124,3 +124,73 @@ def exit(event):
 def backHome(event):
     # winsound.PlaySound("sound/home.wav",winsound.SND_FILENAME | winsound.SND_ASYNC )
     home()
+
+
+
+
+# =============================FUNCTION-OF-LEVEL-ONE===========================================
+
+def level1(event):
+    global player, keyPressed, score_id
+    score = 0
+    canvas.delete("all")
+    #========== BG-LEVEL1-IMG==========
+    canvas.create_image(400, 400, image=imglevel1) 
+    canvas.create_image(25, 10, image=back_img, anchor="nw", tags="back_home")
+    #========== OBJECT-GAME==========
+    canvas.create_image(360, 580, image=objectofgame, tags="platform")
+    canvas.create_image(50, 630, image=objectofgame, tags="platform")
+    canvas.create_image(760, 580, image=objectofgame, tags="platform")
+    canvas.create_image(900, 470, image=objectofgame, tags="platform")
+    canvas.create_image(1080, 550, image=objectofgame, tags="platform")
+    canvas.create_image(1200, 360, image=objectofgame, tags="platform")
+    canvas.create_image(300, 360, image=objectofgame, tags="platform")
+    #========== HEART ==========
+    canvas.create_image(1160, 50, image=heart0flife)
+    canvas.create_image(1195, 50, image=heart0flife)
+    canvas.create_image(1230, 50, image=heart0flife)
+    #========== PLAYER ==========
+    player = canvas.create_image(100, 150, image=player_img)   
+    #========== APPLE-IMG==========    
+    canvas.create_image(300, 545, image=img_apple, tags='coin')
+    canvas.create_image(700, 545, image=img_apple, tags='coin')
+    canvas.create_image(800, 545, image=img_apple, tags='coin')
+    canvas.create_image(1100, 515, image=img_apple, tags='coin')
+    canvas.create_image(1020, 515, image=img_apple, tags='coin')
+    #========== DOOR$KEY-IMG==========
+    canvas.create_image(1265, 315, image = door_img, anchor = "nw", tags = "door")
+    canvas.create_image(900,250, image = key_img, anchor = "nw", tags = "key")
+    #========== MONEY-IMG ==========
+    canvas.create_image(350, 345, image = money_img, anchor = 'nw', tags = "money")
+    canvas.create_image(240,280, image = money_img, anchor = 'nw', tags = "money")
+    canvas.create_image(730,600, image = money_img, anchor = "nw", tags = "money")
+    canvas.create_image(730,600, image = money_img, anchor = "nw", tags = "money")
+    canvas.create_image(430,600, image = money_img, anchor = "nw", tags = "money")
+    
+    #========== DAIMOND-IMG ==========
+    canvas.create_image(400,420, image = dimond_img, anchor = 'nw', tags = "dimond")
+    canvas.create_image(400,420, image = dimond_img, anchor = 'nw', tags = "dimond")
+    canvas.create_image(1130,100, image = dimond_img, anchor = 'nw', tags = "dimond")
+    canvas.create_image(1130,100, image = dimond_img, anchor = 'nw', tags = "dimond")
+    canvas.create_image(1100,100, image = dimond_img, anchor = 'nw', tags = "dimond")
+
+     #==========  COIN IMAGES ==========
+    canvas.create_image(550,300, image = coin_img, anchor = 'nw', tags = "coin")
+    canvas.create_image(1100,390, image = coin_img, anchor = 'nw', tags = "coin")
+    canvas.create_image(1170,390, image = coin_img, anchor = 'nw', tags = "coin")
+    canvas.create_image(680,470, image = coin_img, anchor = 'nw', tags = "coin")
+    canvas.create_image(380,470, image = coin_img, anchor = 'nw', tags = "coin")
+
+     #==========  MONSTER IMAGES ==========
+    canvas.create_image(300,400, image =monster_img, anchor = 'nw', tags = "monster")
+    canvas.create_image(200,100, image =monster_img, anchor = 'nw', tags = "monster")
+    canvas.create_image(550, 446, image =monster_img, anchor = 'nw', tags = "monster")
+    canvas.create_image(1000,100, image =monster_img, anchor = 'nw', tags = "monster")
+    x = 0
+    for i in range(50):
+        canvas.create_image(x,700, image =monster_img, anchor = 'nw', tags = "monster")
+        x += monster_img.width()
+    #  #==========  SHOW-LEVEL$SCORE ==========
+    canvas.create_text(700,50,text='Levels: 1',font=('Arial',18,'bold'),fill='white') 
+    score_id = canvas.create_text(190,50, text=" score : " + str(score), font=("Arial", 20, "bold"), fill="white")
+    window.after(TIMED_LOOP, gravity)  
