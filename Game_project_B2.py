@@ -292,7 +292,7 @@ def level3(event):
     canvas.create_image(1055, 470, image=img_apple, tags='coin')
     canvas.create_image(1090, 470, image=img_apple, tags='coin')
     #========== DOOR$KEY-IMG==========
-    canvas.create_image(1265,200, image = door_img, anchor = "nw", tags = "door")
+    canvas.create_image(1265,250, image = door_img, anchor = "nw", tags = "door")
     canvas.create_image(1150,210, image = key_img, anchor = "nw", tags = "key")
     canvas.create_image(300, 545, image = money_img, anchor = 'nw', tags = "money")
     #========== MONEY-IMG ==========
@@ -313,7 +313,7 @@ def level3(event):
 
      #==========  MONSTER IMAGES ==========
     canvas.create_image(760,275, image =monster_img, anchor = 'nw', tags = "monster")
-    canvas.create_image(1250,210, image =monster_img, anchor = 'nw', tags = "monster")
+    canvas.create_image(1000,350, image =monster_img, anchor = 'nw', tags = "monster")
     canvas.create_image(1185,455, image =monster_img, anchor = 'nw', tags = "monster")
     x = 0
     for i in range(50):
