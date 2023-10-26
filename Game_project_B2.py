@@ -90,7 +90,7 @@ def home():
     canvas.create_image(645, 475, image=help_img, anchor="nw", tags="help")
     canvas.create_image(665, 560, image=exit_img, anchor="nw", tags="exit")
     
-    # winsound.PlaySound("sound/home.wav",winsound.SND_FILENAME | winsound.SND_ASYNC )
+    winsound.PlaySound("sound/home.wav",winsound.SND_FILENAME | winsound.SND_ASYNC )
 home()
 
 # =============================CONSTANTS==================================
@@ -113,16 +113,16 @@ def start(event):
 def help(event):
     canvas.create_image(0,0 , image=bg_img, anchor="nw")
     canvas.create_image(25, 10, image=back_img, anchor="nw", tags="back_home")
-    # winsound.PlaySound("sound/home.wav",winsound.SND_FILENAME | winsound.SND_ASYNC )
+    winsound.PlaySound("sound/home.wav",winsound.SND_FILENAME | winsound.SND_ASYNC )
 
 # =============================EXIT==================================
 def exit(event):
-    # winsound.PlaySound("sound/click.wav",winsound.SND_FILENAME | winsound.SND_ASYNC )
+    winsound.PlaySound("sound/click.wav",winsound.SND_FILENAME | winsound.SND_ASYNC )
     window.destroy()
 
 # =============================BACK-HOME==================================
 def backHome(event):
-    # winsound.PlaySound("sound/home.wav",winsound.SND_FILENAME | winsound.SND_ASYNC )
+    winsound.PlaySound("sound/home.wav",winsound.SND_FILENAME | winsound.SND_ASYNC )
     home()
 
 
@@ -251,7 +251,7 @@ def level2(event):
     canvas.create_image(860,155, image =monster_img, anchor = 'nw', tags = "monster")
     x = 0
     for i in range(50):
-        canvas.create_image(x,680, image =monster_img, anchor = 'nw', tags = "monster")
+        canvas.create_image(x,700, image =monster_img, anchor = 'nw', tags = "monster")
         x += monster_img.width()
      #==========  SHOW-LEVEL$SCORE ==========
     canvas.create_text(700,50,text='Levels: 2',font=('Arial',18,'bold'),fill='white') 
@@ -320,7 +320,7 @@ def level3(event):
         canvas.create_image(x,720, image =monster_img, anchor = 'nw', tags = "monster")
         x += monster_img.width()
      #==========  SHOW-LEVEL$SCORE ==========
-    canvas.create_text(700,50,text='Levels: 2',font=('Arial',18,'bold'),fill='white') 
+    canvas.create_text(700,50,text='Levels: 3',font=('Arial',18,'bold'),fill='white') 
     score_id = canvas.create_text(190,50, text=" score : " + str(score), font=("Arial", 20, "bold"), fill="white")
     window.after(TIMED_LOOP, gravity)
 
