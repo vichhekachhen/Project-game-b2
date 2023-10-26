@@ -317,7 +317,7 @@ def level3(event):
     canvas.create_image(1185,455, image =monster_img, anchor = 'nw', tags = "monster")
     x = 0
     for i in range(50):
-        canvas.create_image(x,700, image =monster_img, anchor = 'nw', tags = "monster")
+        canvas.create_image(x,720, image =monster_img, anchor = 'nw', tags = "monster")
         x += monster_img.width()
      #==========  SHOW-LEVEL$SCORE ==========
     canvas.create_text(700,50,text='Levels: 2',font=('Arial',18,'bold'),fill='white') 
